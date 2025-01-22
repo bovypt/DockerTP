@@ -55,4 +55,3 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: andrenextu/node-docker:latest andrenextu/node-docker:${{ github.sha }}
