@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Hello world
-        run: echo "Hello world github actions"
+        run: echo "Hello world GitHub Actions"
 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,6 +20,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Validate lock file presence
+        run: |
+          if [ ! -f package-lock.json ]; then
+            echo "package-lock.json is missing. Run 'npm install' locally to generate it."
+            exit 1
+          fi
 
       - name: Install dependencies
         run: npm ci
