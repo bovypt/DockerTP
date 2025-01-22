@@ -57,4 +57,4 @@ jobs:
           push: true
           tags: |
             bovypt/node-docker:latest
-            andrenextu/node-docker:${{ github.sha }}
+            bovypt/node-docker:${{ github.sha }}
