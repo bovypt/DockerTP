@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Hello world
-      uses: echo Hello world github actionse
+      -name: Hello world
+      -uses: echo Hello world github actionse
