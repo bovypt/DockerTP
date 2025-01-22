@@ -32,7 +32,7 @@ jobs:
       - name: Validate lock file presence
         run: |
           if [ ! -f package-lock.json ]; then
-            echo "package-lock.json is missing. Run 'npm install' locally to generate it."
+            echo "Error: package-lock.json is missing. Run 'npm install' locally to generate it."
             exit 1
           fi
 
