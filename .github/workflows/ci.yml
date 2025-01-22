@@ -55,4 +55,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: bovypt/node-docker:latest andrenextu/node-docker:${{ github.sha }}
+          tags: |
+            bovypt/node-docker:latest
+            andrenextu/node-docker:${{ github.sha }}
